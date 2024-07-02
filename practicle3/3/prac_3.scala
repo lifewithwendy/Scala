@@ -5,12 +5,12 @@
 
 
 object prac_3{
-    def calculateArithmeticMean(num1: Int, num2: Int): Double = {
+    def calculateArithmeticMean(num1: Double, num2: Double): Double = {
         val mean = (num1 + num2) / 2.0
         BigDecimal(mean).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
         //declare BigDecimal object and set to the 2nd decimal 
     }
     def main(args: Array[String]) = {
-        println(calculateArithmeticMean(7,8))
+        println(calculateArithmeticMean(7.12,8.185))
     }
 }
