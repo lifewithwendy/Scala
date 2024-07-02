@@ -4,7 +4,7 @@
 object prac_2 {
 def filterStrings(strings: List[String]): List[String] = {
     strings.filter(_.length > 5)
-    // s => s.length > 5
+    // (s => s.length > 5)  takes each item filter if they are less than 5 letters
 }
 
 def main(args: Array[String]): Unit = {
