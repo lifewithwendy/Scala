@@ -10,7 +10,7 @@ object NameFormatter {
   //so basically takes a string and a function and calls the function
   def formatNames(name: String)(formatFunc: String => String): String = formatFunc(name)
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) = {
     // Test cases
     val names = List("Benny", "Niroshan", "Saman", "Kumara")
 

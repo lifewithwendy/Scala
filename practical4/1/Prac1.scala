@@ -3,7 +3,7 @@ object prac1 {
   var names: Array[String] = Array("Apple", "Banana", "Orange")
   var itemQuantities: Array[Int] = Array(50, 30, 20)
 
-  def displayInventory(): Unit = {
+  def displayInventory() = {
     println("Inventory:")
     for (i <- names.indices) {//returns range (0 to 5-1 like)
       println(s"${names(i)}: ${itemQuantities(i)}")//could use length - 
@@ -11,7 +11,7 @@ object prac1 {
     println()
   }
 
-  def restockItem(itemName: String, quantity: Int): Unit = {
+  def restockItem(itemName: String, quantity: Int) = {
     val index = names.indexOf(itemName) //if no match 0
     if (index >= 0) {
       itemQuantities(index) += quantity
@@ -22,7 +22,7 @@ object prac1 {
     println()
   }
 
-  def sellItem(itemName: String, quantity: Int): Unit = {
+  def sellItem(itemName: String, quantity: Int) = {
     val index = names.indexOf(itemName)
     if (index >= 0) {
       if (itemQuantities(index) >= quantity) {
@@ -37,7 +37,7 @@ object prac1 {
     println()
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) = {
     displayInventory()
     restockItem("Apple", 10)
     sellItem("Banana", 5)
