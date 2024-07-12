@@ -5,7 +5,7 @@ object prac1 {
 
   def displayInventory() = {
     println("Inventory:")
-    for (i <- names.indices) {//returns range (0 to 5-1 like)
+    for (i <- 0 until names.length) {//
       println(s"${names(i)}: ${itemQuantities(i)}")//could use length - 
     } //use ${ ... } to display variables
     println()
