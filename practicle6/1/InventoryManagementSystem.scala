@@ -1,6 +1,6 @@
 // Define the case class for Product
 case class Product(id: String, name: String, quantity: Int, price: Double)
-
+//type of class that is optimized, automatically provide several features
 // Define the Inventory class 
 class Inventory {
   private var store = Array[Product]()
@@ -14,7 +14,7 @@ class Inventory {
   }
 
   def printProductList(): Unit = {
-    for (i <- store.indices) {
+    for (i <- store.indices) {//return a range of indices ,ex- 0 to len-1
       println(s"${i + 1}. ${store(i)}")
     }
   }
