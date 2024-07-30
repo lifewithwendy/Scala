@@ -12,8 +12,9 @@ def calculateGrade(percentage: Double): Char = {
 
 // Function to validate user input
 def validateInput(name: String, marks: Int, totalMarks: Int): (Boolean, Option[String]) = {
-  if (name.isEmpty) {
-    (false, Some("Name cannot be empty"))
+  //option  is container for zero or one element of a given type
+  if (name.isEmpty) {//some is needed for option
+    (false, Some("Name cannot be empty"))// tuple 
   } else if (marks < 0 || marks > totalMarks) {
     (false, Some("Marks must be between 0 and total possible marks"))
   } else if (totalMarks <= 0) {
@@ -40,15 +41,15 @@ def getStudentInfo: (String, Int, Int, Double, Char) = {
     // Calculate percentage and grade
     val percentage = (marks.toDouble / totalMarks) * 100
     val grade = calculateGrade(percentage)
-    (name, marks, totalMarks, percentage, grade)
+    (name, marks, totalMarks, percentage, grade)//tuple containing details
   } else {
     println(errorMessage.get)
-    // Return a default tuple in case of invalid input (can be handled differently as needed)
+    // Return a default tuple in case of invalid input 
     ("", 0, 0, 0.0, 'D')
   }
 }
 
-// Function to print student record
+// print student record
 def printStudentRecord(record: (String, Int, Int, Double, Char)): Unit = {
   val (name, marks, totalMarks, percentage, grade) = record
   println(s"Student Name: $name")
@@ -60,7 +61,7 @@ def printStudentRecord(record: (String, Int, Int, Double, Char)): Unit = {
 
 // Function to get student info with retry
 def getStudentInfoWithRetry: (String, Int, Int, Double, Char) = {
-  var record: (String, Int, Int, Double, Char) = ("", 0, 0, 0.0, 'D')
+  var record: (String, Int, Int, Double, Char) = ("", 0, 0, 0.0, 'D')//tuple can hold objects with different types.
   var isValid = false
   
   while (!isValid) {
@@ -77,7 +78,7 @@ def getStudentInfoWithRetry: (String, Int, Int, Double, Char) = {
 }
 
 // Main object to run the application
-object StudentRecordsApp extends App {
+object StudentRecordsManagement extends App {
   println("Welcome to the Student Records Application")
 
   // Get valid student info
