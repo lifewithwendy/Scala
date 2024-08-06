@@ -10,7 +10,7 @@ object FunctionalProgrammingPractical {
   def isPrime(n: Int): Boolean = {
     if (n <= 1) false
     else if (n == 2) true
-    else !(2 to math.sqrt(n).toInt).exists(i => n % i == 0)
+    else !(2 to math.sqrt(n).toInt).exists(i => n % i == 0)//check atleast on exists
   }
 
   def filterPrime(numbers: List[Int]): List[Int] = {
@@ -19,12 +19,12 @@ object FunctionalProgrammingPractical {
 
   def main(args: Array[String]): Unit = {
     val input1 = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    println(s"Even numbers: ${filterEvenNumbers(input1)}") // Output: List(2, 4, 6, 8, 10)
+    println(s"Even numbers: ${filterEvenNumbers(input1)}") //List(2, 4, 6, 8, 10)
 
     val input2 = List(1, 2, 3, 4, 5)
-    println(s"Squares: ${calculateSquare(input2)}") // Output: List(1, 4, 9, 16, 25)
+    println(s"Squares: ${calculateSquare(input2)}") //List(1, 4, 9, 16, 25)
 
     val input3 = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    println(s"Prime numbers: ${filterPrime(input3)}") // Output: List(2, 3, 5, 7)
+    println(s"Prime numbers: ${filterPrime(input3)}") //List(2, 3, 5, 7)
   }
 }
