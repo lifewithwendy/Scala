@@ -18,7 +18,7 @@ object FunctionalProgrammingPractical {
   }
 
   def main(args: Array[String]): Unit = {
-    val input1 = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val input1 = List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     println(s"Even numbers: ${filterEvenNumbers(input1)}") //List(2, 4, 6, 8, 10)
 
     val input2 = List(1, 2, 3, 4, 5)
