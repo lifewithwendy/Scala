@@ -1,5 +1,5 @@
-object PatternMatch {
-    def patternMatch(no:Int) ={
+object PatternMatch1 {
+    def patternMatcher(no:Int) ={
         no match {
             case 0 => println("Zero")
             case x if(x < 0) => println("Negative")
@@ -10,6 +10,6 @@ object PatternMatch {
     def main(args: Array[String])  = {
         print("Enter a number: ")
         val input = scala.io.StdIn.readInt()
-        patternMatch(input)
+        patternMatcher(input)
     }
 }

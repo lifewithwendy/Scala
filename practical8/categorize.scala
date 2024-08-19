@@ -9,7 +9,7 @@ object categorize {
         if(args.length != 1){
             println("Enter exactly 1 parameter")
         }else{
-            val number = args(0).toInt
+            val number = args(0).toInt  
             var msg = (divBy3(number), divBy5(number)) match {
                 case (true, true) =>  "Multiple of Both Three and Five"
                 case (true, false) =>  "Multiple of Five"
