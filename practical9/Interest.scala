@@ -10,6 +10,6 @@ object Interest {
     def main(Args: Array[String]) = {
         print("Enter deposit amount :")
         var deposit = scala.io.StdIn.readLine().toDouble
-        println("Interest on deposit amount is : " + interest(deposit) + "Rupees")
+        println("Interest on deposit amount is : " + interest(deposit) + " Rupees")
     }
 }
