@@ -22,39 +22,50 @@ class Rational(n: Int, d: Int) {
   // Helper method to calculate GCD
   private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
-  def sub(value : Rational): Rational = {
-    if(this.denominator == value.denominator) {
-      new Rational(this.numerator - value.numerator, this.denominator)
-    } else {
-      new Rational(this.numerator * value.denominator - value.numerator * this.denominator, this.denominator * value.denominator)
-    }
+  // Method to subtract another Rational
+  def sub(value: Rational): Rational = {
+    new Rational(
+      this.numerator * value.denominator - value.numerator * this.denominator,
+      this.denominator * value.denominator
+    )
   }
-  def add(value : Rational): Rational = {
-    new Rational(this.numerator * value.denominator + value.numerator * this.denominator, this.denominator * value.denominator)
+
+  // Method to add another Rational
+  def add(value: Rational): Rational = {
+    new Rational(
+      this.numerator * value.denominator + value.numerator * this.denominator,
+      this.denominator * value.denominator
+    )
   }
 }
 
-// Companion object to include the main method
 object RationalApp {
   def main(args: Array[String]): Unit = {
     println("Enter a rational number to negate (format: numerator/denominator): ")
     val input = scala.io.StdIn.readLine().split("/")
 
-    val rational = new Rational(input(0).toInt ,input(1).toInt)
-    println(s"Negation of $rational is: ${rational.neg}")
+    if (input.length == 2) {
+      val rational = new Rational(input(0).toInt, input(1).toInt)
+      println(s"Negation of $rational is: ${rational.neg}")
+    } else {
+      println("Invalid input format")
+    }
 
-    println("To find x-y-z enter the x,y,z, (format: numerator/denominator): ")
-    print("Enter x: ")
-    var inX = scala.io.StdIn.readLine().split("/") 
-    val x = new Rational(inX(0).toInt ,inX(1).toInt)
+    println("To find x-y-z, enter the values (format: numerator/denominator): ")
 
-    print("Enter y: ")
-    var inY = scala.io.StdIn.readLine().split("/") 
-    val y = new Rational(inY(0).toInt ,inY(1).toInt)
+    def getRationalInput(prompt: String): Rational = {
+      print(prompt)
+      val in = scala.io.StdIn.readLine().split("/")
+      if (in.length == 2) new Rational(in(0).toInt, in(1).toInt)
+      else {
+        println("Invalid input format. Defaulting to 0/1.")
+        new Rational(0, 1)
+      }
+    }
 
-    print("Enter z: ")
-    var inZ = scala.io.StdIn.readLine().split("/") 
-    val z = new Rational(inZ(0).toInt ,inZ(1).toInt)
+    val x = getRationalInput("Enter x: ")
+    val y = getRationalInput("Enter y: ")
+    val z = getRationalInput("Enter z: ")
 
     val result = x.sub(y).sub(z)
     println(s"x-y-z is: $result")

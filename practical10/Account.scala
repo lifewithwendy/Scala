@@ -77,6 +77,8 @@ object BankApp {
     println(s"Total balance: ${bank.totalBalance}")
 
     // Apply interest and print final balances
+    println("Balances before applying interest:")
+    bank.accounts.foreach(println)
     bank.applyInterest
     println("Final balances after applying interest:")
     bank.accounts.foreach(println)
